@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MR Happy New Year 2021</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrapper">
+  <div class="container">
+    <a class="gift" href="https://myrewards.app.link/chDrriBwkdb" target="_blank"></a>
+    <div class="icon-wrap">
+      <div data-id="1" class="icon-item"><img src="/images/icon_1.png"></div>
+      <div data-id="2" class="icon-item"><img src="/images/icon_2.png"></div>
+      <div data-id="3" class="icon-item"><img src="/images/icon_3.png"></div>
+    </div>
+    <div class="card-wrap">
+      <img id="card-img" src="/images/card_1.png">
+      <a id="d-link" class="btn-download" href="/images/card_1.png" target="_black"><img src="/images/btn-download.png"></a>
+    </div>
+  </div>
+</div>
+<script>
+  var element= document.getElementsByClassName('icon-item')
+
+  for(var i=0;i<element.length;i++){
+    element[i].onclick = function(){
+      var _id = this.getAttribute('data-id')
+      document.getElementById('card-img').src = "/images/card_" + _id + ".png";
+      document.getElementById('d-link').href = "/images/card_" + _id + ".png";
+    }
+  }
+</script>
+</body>
+</html>
