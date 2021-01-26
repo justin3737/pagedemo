@@ -92,13 +92,13 @@ html, body {
     height: 100%;
   }
   .icon-wrap {
-    top: 24.5%;
+    top: 35.5%;
   }
 }
 
 @media (max-width: 280px) {
   .icon-wrap {
-    top: 21.5%;
+    top: 27.5%;
   }
 }
 
