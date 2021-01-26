@@ -15,7 +15,7 @@ html, body {
   width: 100%;
   max-width: 414px;
   height: 100%;
-  background-image: url('/images/bg.png');
+  background-image: url('images/bg.png');
   background-repeat: no-repeat;
   background-size: 100%;
   position: absolute;
@@ -27,7 +27,7 @@ html, body {
 .gift {
   width: 12%;
   height: 98px;
-  background-image: url('/images/btn-gift.png');
+  background-image: url('images/btn-gift.png');
   background-repeat: no-repeat;
   background-size: contain;
   display: block;
