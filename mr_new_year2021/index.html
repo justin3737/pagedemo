@@ -18,19 +18,29 @@
     </div>
     <div class="card-wrap">
       <img id="card-img" src="images/card_1.png">
-      <a id="d-link" class="btn-download" href="images/card_1.png" target="_black" download><img src="images/btn-download.png"></a>
+      <a id="d-link" class="btn-download" onclick="myDownload();"><img src="images/btn-download.png"></a>
     </div>
   </div>
 </div>
 <script>
   var element= document.getElementsByClassName('icon-item')
+  var _id = 1;
 
   for(var i=0;i<element.length;i++){
     element[i].onclick = function(){
-      var _id = this.getAttribute('data-id')
+      _id = this.getAttribute('data-id')
       document.getElementById('card-img').src = "images/card_" + _id + ".png";
-      document.getElementById('d-link').href = "images/card_" + _id + ".png";
     }
+  }
+
+  function myDownload() {
+    var file = "images/card_" + _id + ".png";
+    var a = document.createElement('a');
+    a.href = file;
+    a.download = file;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
   }
 </script>
 </body>
