@@ -33,14 +33,29 @@
     }
   }
 
+  function getImageDataURL(image) {
+    var canvas = document.createElement('canvas');
+    canvas.width = image.width;
+    canvas.height = image.height;
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(image, 0, 0, image.width, image.height);
+    var extension = image.src.substring(image.src.lastIndexOf('.') + 1).toLowerCase();
+    return canvas.toDataURL('image/' + extension, 1);
+  }
+
   function myDownload() {
-    var file = "images/card_" + _id + ".png";
-    var a = document.createElement('a');
-    a.href = file;
-    a.download = file;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
+    var url = "images/card_" + _id + ".png";
+    var downloadName = "card_" + _id;
+    var tag = document.createElement('a');
+    tag.setAttribute('download', downloadName.replace(/\./g, '。'));
+
+    var image = new Image();
+    image.src = url + '?time=' + new Date().getTime();
+    image.setAttribute('crossOrigin', 'Anonymous');
+    image.onload = () => {
+      tag.href = getImageDataURL(image);
+      tag.click();
+    };
   }
 </script>
 </body>
